@@ -1,4 +1,18 @@
-1.main.py imports from all player implementations and board
-2.AI players import evaluation function from utils/evaluator.py
-3.All files import constants from utils/constants.py
-4.Player classes share the same interface (get_move() method)
+# Gomoku Five-in-a-Row AI Solver
+
+![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
+![GitHub](https://img.shields.io/github/license/yourusername/gomoku-ai.svg)
+
+A Python implementation of Gomoku (Five in a Row) with AI players using Minimax and Alpha-Beta pruning algorithms.
+
+## Features
+
+- 🎮 Two game modes:
+  - Human vs AI
+  - AI vs AI (Minimax vs Alpha-Beta)
+- ⚡ Optimized game engine with board evaluation
+- 🧠 AI with adjustable difficulty (search depth)
+- 📊 Performance comparison between algorithms
+
+
+
