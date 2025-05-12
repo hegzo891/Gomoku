@@ -1,5 +1,5 @@
 BOARD_SIZE = 15
-EMPTY = 0
-PLAYER_X = 1
-PLAYER_O = 2
+HUMAN = 'X'
+AI = 'O'
+EMPTY = '.'
 WIN_LENGTH = 5
