@@ -1,5 +1,4 @@
-BOARD_SIZE = 15
+EMPTY = '.'
 HUMAN = 'X'
 AI = 'O'
-EMPTY = '.'
 WIN_LENGTH = 5

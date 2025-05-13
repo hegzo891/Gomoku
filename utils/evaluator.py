@@ -1,6 +1,6 @@
-import board
 from utils.constants import HUMAN, AI, EMPTY, WIN_LENGTH
-from board import GomokuBoard, is_win, is_full
+from board import GomokuBoard, is_win
+
 
 def evaluate_line(line, player):
     score = 0
@@ -44,11 +44,8 @@ def evaluate_position(board, player):
     return total_score
 
 def utility(board_obj):
-    if isinstance(board_obj, GomokuBoard):
-        if is_win(board_obj, AI):  
-            return 100000
-        elif is_win(board_obj, HUMAN):
-            return -100000 
-        return evaluate_position(board_obj.board, AI) - evaluate_position(board_obj.board, HUMAN)
-
-
+    if is_win(board_obj, AI):  
+        return 100000
+    elif is_win(board_obj, HUMAN):
+        return -100000 
+    return evaluate_position(board_obj.board, AI) - evaluate_position(board_obj.board, HUMAN)
