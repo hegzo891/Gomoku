@@ -42,7 +42,7 @@ class GomokuGame:
         
         # Beautiful color palette
         self.colors = {
-            'background': '#f8f9fa',
+            'background': '#f0f2f5',
             'title_bg': '#6c5ce7',
             'title_fg': 'white',
             'button_bg': '#dfe6e9',
@@ -55,7 +55,9 @@ class GomokuGame:
             'button_border': '#636e72',
             'win_highlight': '#fdcb6e',
             'button_disabled': '#b2bec3',
-            'stone_bg': '#dfe6e9'  # Background for the stones
+            'stone_bg': '#dfe6e9',
+            'board_bg': '#dfe6e9',
+            'stone_shadow': '#636e72'
         }
         
         # Title Frame with gradient effect
@@ -74,6 +76,7 @@ class GomokuGame:
         title.pack(expand=True, fill='both')
         
         # Create the GUI buttons for the game board
+        self.canvas = tk.Canvas(bg=self.colors['board_bg'])
         for i in range(self.size):
             for j in range(self.size):
                 button = tk.Button(
@@ -85,7 +88,8 @@ class GomokuGame:
                     bg=self.colors['button_bg'],
                     fg="#2d3436",
                     activebackground=self.colors['button_active'],
-                    relief="solid",
+                    relief="flat",
+                    # image=self.create_stone_image(),
                     borderwidth=1,
                     highlightthickness=1,
                     highlightbackground=self.colors['button_border'],
@@ -396,8 +400,8 @@ def main():
     input_window.configure(bg="#f8f9fa")
     input_window.resizable(False, False)
 
-    window_width = 650
-    window_height = 650
+    window_width = 600
+    window_height = 600
     screen_width = input_window.winfo_screenwidth()
     screen_height = input_window.winfo_screenheight()
     x = (screen_width // 2) - (window_width // 2)
