@@ -138,11 +138,11 @@ class GomokuGame:
     def update_status_text(self):
         """Update the status text based on game mode and current player"""
         if self.game_mode == "Human vs AI":
-            status_text = "Your turn (Black ⚫)" if self.current_player == HUMAN else "AI's turn (White ⚪)"
+            status_text = "Your turn (Black ⚫)" if self.current_player == HUMAN else "AI's turn (White 🟣)"
         elif self.game_mode == "AI vs AI":
-            status_text = f"AI 1's turn (Black ⚫)" if self.current_player == HUMAN else "AI 2's turn (White ⚪)"
+            status_text = f"AI 1's turn (Black ⚫)" if self.current_player == HUMAN else "AI 2's turn (White 🟣)"
         else:  # Human vs Human
-            status_text = "Player 1's turn (Black ⚫)" if self.current_player == HUMAN else "Player 2's turn (White ⚪)"
+            status_text = "Player 1's turn (Black ⚫)" if self.current_player == HUMAN else "Player 2's turn (White 🟣)"
         
         self.status_var.set(status_text)
 
@@ -177,7 +177,7 @@ class GomokuGame:
             "Gomoku Game\n\nA beautiful Python implementation of the classic game\n"
             "with AI opponents using Minimax and Alpha-Beta algorithms.\n\n"
             "First to get 5 in a row wins!\n"
-            "Black (⚫) vs White (⚪)"
+            "Black (⚫) vs White (🟣)"
         )
 
     def prompt_new_game(self):
@@ -220,11 +220,11 @@ class GomokuGame:
     def handle_win(self):
         """Handle the win condition with appropriate message"""
         if self.game_mode == "Human vs AI":
-            winner = "You win! (Black ⚫)" if self.current_player == HUMAN else "AI wins! (White ⚪)"
+            winner = "You win! (Black ⚫)" if self.current_player == HUMAN else "AI wins! (White 🟣)"
         elif self.game_mode == "AI vs AI":
-            winner = "AI 1 wins! (Black ⚫)" if self.current_player == HUMAN else "AI 2 wins! (White ⚪)"
+            winner = "AI 1 wins! (Black ⚫)" if self.current_player == HUMAN else "AI 2 wins! (White 🟣)"
         else:  # Human vs Human
-            winner = "Player 1 wins! (Black ⚫)" if self.current_player == HUMAN else "Player 2 wins! (White ⚪)"
+            winner = "Player 1 wins! (Black ⚫)" if self.current_player == HUMAN else "Player 2 wins! (White 🟣)"
         
         self.end_game(winner)
         
@@ -275,9 +275,9 @@ class GomokuGame:
                         disabledforeground='black'
                     )
                 elif text == AI:
-                    # White stone (⚪)
+                    # White stone (🟣)
                     button.config(
-                        text='⚪',
+                        text='🟣',
                         font=("Segoe UI Emoji", 24),
                         fg='white',
                         bg=self.colors['stone_bg'],
@@ -489,7 +489,7 @@ def main():
         main_frame,
         text="Gomoku is a strategy game where players alternate\n"
              "placing stones to form an unbroken line of five.\n\n"
-             "Black: ⚫    White: ⚪",
+             "Black: ⚫    White: 🟣",
         font=("Segoe UI Emoji", 11),
         bg="#f8f9fa",
         fg="#636e72"
